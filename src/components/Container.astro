@@ -1,0 +1,18 @@
+---
+---
+
+<div class="container">
+  <slot />
+</div>
+
+<style>
+  .container {
+    max-width: 100vw;
+    margin: 0 auto;
+  }
+  @media screen and (min-width: 800px) {
+    .container {
+      max-width: 65vw;
+    }
+  }
+</style>

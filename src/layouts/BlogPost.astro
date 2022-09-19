@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Container from '../components/Container.astro'
 
 export interface Props {
 	content: {
@@ -10,11 +11,12 @@ export interface Props {
 		pubDate?: string;
 		updatedDate?: string;
 		heroImage?: string;
+		readTime?: string;
 	};
 }
 
 const {
-	content: { title, description, pubDate, updatedDate, heroImage },
+	content: { title, description, pubDate, updatedDate, heroImage, readTime },
 } = Astro.props;
 ---
 
@@ -36,11 +38,11 @@ const {
 	<body>
 		<Header />
 		<main>
+		<Container>
 			<article>
 				{heroImage && (
 					<img
-						width={720}
-						height={360}
+					    class="hero-image"
 						src={heroImage}
 						alt=""
 					/>
@@ -51,7 +53,18 @@ const {
 				<hr/>
 				<slot />
 			</article>
+			</Container>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+    .hero-image {
+        height: 40vh;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+</style>

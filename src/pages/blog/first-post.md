@@ -2,7 +2,8 @@
 layout: "../../layouts/BlogPost.astro"
 title: "Welcome to the blog"
 description: "My first post on the new blog"
-pubDate: "Sep 01 2022"
+pubDate: "Sep 01 2021"
+readTime: '5mins'
 ---
 
 Welcome to the first post on the blog.
